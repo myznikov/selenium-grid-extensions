@@ -43,7 +43,7 @@ public class FileDeleteServletTest extends BaseServletTest {
 
     @Test
     public void getShouldDeleteFile() throws IOException {
-        File fileTobeDeleted = File.createTempFile("testDeleteFile", ".txt");
+        File fileTobeDeleted = File.createTempFile("test Delete File with spaces in name", ".txt");
         FileUtils.write(fileTobeDeleted, "file_to_be_deleted_content", StandardCharsets.UTF_8);
 
         CloseableHttpClient httpClient = HttpClients.createDefault();

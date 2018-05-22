@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.net.URLDecoder;
 import java.nio.file.Files;
 import java.util.logging.Logger;
 
@@ -27,7 +28,7 @@ public class FileDownloadServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        String pathInfo = req.getPathInfo();
+        String pathInfo = URLDecoder.decode(req.getPathInfo(), "UTF-8");
         LOGGER.info("Request for file download received with path: " + pathInfo);
 
         File file = new File(pathInfo);

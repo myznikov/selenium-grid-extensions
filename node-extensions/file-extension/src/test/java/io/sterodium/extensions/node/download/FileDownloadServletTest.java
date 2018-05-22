@@ -51,7 +51,7 @@ public class FileDownloadServletTest extends BaseServletTest {
 
     @Test
     public void getShouldReturnFileContentsWithNameInHeader() throws IOException {
-        File fileToGet = File.createTempFile("test", ".txt");
+        File fileToGet = File.createTempFile("test name with spaces", ".txt");
         FileUtils.write(fileToGet, "expected_content", StandardCharsets.UTF_8);
 
         CloseableHttpClient httpClient = HttpClients.createDefault();
